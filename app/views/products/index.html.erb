@@ -1,0 +1,7 @@
+<h1>hello</h1>
+<%@products.each do |product|%>
+  <p><%= product.image %></p>
+  <img src='<%=product.image%>'/>
+  <p><%= product.name %></p>
+  <p><%= product.price %></p>
+<%end%>
