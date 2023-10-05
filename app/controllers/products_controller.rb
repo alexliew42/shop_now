@@ -20,8 +20,19 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: params[:name], price: params[:price], image: params[:image], description: params[:description])
+    @product = Product.new(
+      name: params[:name], 
+      price: params[:price], 
+      image: params[:image], 
+      description: params[:description],
+      category_id: params[:category_id]
+    )
     @product.save
     render :show
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
   end
 end
