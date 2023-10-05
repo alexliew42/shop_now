@@ -5,5 +5,6 @@ class CartedproductsController < ApplicationController
       product_id: params[:product_id],
       status: 'carted'
     )
+    
   end
 end
