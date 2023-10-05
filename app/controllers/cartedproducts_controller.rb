@@ -6,6 +6,7 @@ class CartedproductsController < ApplicationController
       status: 'carted'
     )
     @carted_product.save
+    render :show
   end
 
   def index
