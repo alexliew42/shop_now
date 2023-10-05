@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = current_user.orders
+    # A user can see all of their orders
+    @orders = Order.where(user_id: current_user.id)
     render :index
   end
 
   def create
+    # A user can create an order from all of their carted products
+    
     @carted_products = CartedProduct.where(status:'carted', user_id: current_user.id)
     calc_subtotal = 0
     @carted_products.each do |carted_product|
