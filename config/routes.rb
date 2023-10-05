@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   post "/cartedproducts" => "cartedproducts#create"
   get "/cartedproducts" => "cartedproducts#index"
+  resources :orders
 end
