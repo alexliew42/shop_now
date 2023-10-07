@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "/cartedproducts" => "cartedproducts#create"
   get "/cartedproducts" => "cartedproducts#index"
   resources :orders
+  get "/category_index" => "products#category_index"
 end

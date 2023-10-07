@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     render :index
   end
 
+  def category_index
+    @products = Product.where(category_id: params[:category_id])
+    render :index
+  end
+
   def show
     # Show product by id
     @product = Product.find_by(id: params[:id])
